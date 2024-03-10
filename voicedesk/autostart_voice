@@ -1,0 +1,13 @@
+#!/bin/sh
+
+while :
+do
+process=`ps -ef | grep start_desk | grep -v "grep" | wc -l`
+        if [ ${process} -eq 0 ];then 
+                echo "process down"
+
+		cd /home/jimin/voicedesk
+		./start_desk &                      
+        fi
+
+done
