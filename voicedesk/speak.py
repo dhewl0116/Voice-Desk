@@ -2,9 +2,12 @@ import io
 from pydub import AudioSegment
 from pydub.playback import play
 from google.cloud import texttospeech
+
+
 def play_wav(file_path):
     audio = AudioSegment.from_file(file_path, format = "wav")
     play(audio)
+
 
 def text_to_speech(text):
     try:
@@ -29,5 +32,6 @@ def text_to_speech(text):
           out.write(response.audio_content)
           print('Audio content written to file')
         play_wav("/home/jimin/voicedesk/output.wav")
+        
     except Exception as e:
         print("오류 발생:", str(e))
