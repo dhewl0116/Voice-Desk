@@ -1,8 +1,12 @@
 import cv2
+
+
 def capture_and_split_image():
+    
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 2560)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1440)
+    
     if not cap.isOpened():
         print("camera is not opened")
     else:
@@ -12,6 +16,8 @@ def capture_and_split_image():
         else:
             for i in range(25):
                 ret, original_image = cap.read()
+
+    
     # 이미지를 두 부분으로 나누기
     height, width = original_image.shape[:2]
     half_width = width // 2
