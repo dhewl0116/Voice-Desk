@@ -1,7 +1,10 @@
 from openai import OpenAI
 import base64
 import requests
+
+
 def summrize(txt):
+    
     secret_key = ""
     if secret_key is None:
         raise ValueError("No SECRET_KEY found in environment variables")
